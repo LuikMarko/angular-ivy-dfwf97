@@ -14,10 +14,14 @@ export class AppComponent {
       )
       .subscribe(data => {
         console.log(data);
+        this.title = data.titles.display;
         this.pageSummary = data.extract;
+        this.imageThumbnail = data.thumbnail.source;
       });
   }
   name = "Angular " + VERSION.major;
 
   pageSummary: string;
+  imageThumbnail: string;
+  title: string;
 }
